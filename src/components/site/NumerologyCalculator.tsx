@@ -67,7 +67,7 @@ export function NumerologyCalculator() {
       setResult(null);
       return;
     }
-    const [year, month, day] = dob.split("-");
+    const [year = "", month = "", day = ""] = dob.split("-");
     const lifePath = reduceNumber(
       reduceNumber(digitsSum(day)) + reduceNumber(digitsSum(month)) + reduceNumber(digitsSum(year)),
     );
@@ -82,7 +82,9 @@ export function NumerologyCalculator() {
       lifePath,
       destiny,
       birthday,
-      meaning: LIFE_PATH_MEANINGS[lifePath] ?? LIFE_PATH_MEANINGS[9],
+      meaning:
+        LIFE_PATH_MEANINGS[lifePath] ??
+        ({ title: "Your Path", text: "A unique journey shaped by your own choices." } as const),
     });
   }
 
