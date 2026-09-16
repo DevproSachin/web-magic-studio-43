@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, Compass, Eye, Heart, Lock, MessageCircle, Moon, ShieldCheck, Sparkles, Star, Sun } from "lucide-react";
 
 import heroImage from "@/assets/hero-mystic.jpg";
+import { NumerologyCalculator } from "@/components/site/NumerologyCalculator";
 import { perks, products, readings, testimonials } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -119,6 +120,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <NumerologyCalculator />
 
       {/* Products */}
       <section className="py-16">
